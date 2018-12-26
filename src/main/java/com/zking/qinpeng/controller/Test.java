@@ -11,7 +11,7 @@ public class Test {
     /*1、requestHeader*/
     @RequestMapping(value="test",method=RequestMethod.POST)
     public String test(@RequestHeader("User-Agent") @RequestParam String sex) {
-        System.out.println(sex+"---------------------------------------------------------");
+        System.out.println(sex+"----------eee-----------------------------------------------");
         return "index";
     }
 
