@@ -15,6 +15,11 @@ public class PageAspect {
 
     @Around("execution(* *..*Service.*Pager(..))")
     public Object incoke(ProceedingJoinPoint args) throws Throwable {
+        /*1、获取参数
+        * 2、查看方法是否由pagebean
+        * 3、通过pagehelper进行内存分页
+        * 4、返回数据
+        * */
         Object[] params = args.getArgs();
         PageBean bean=null;
         for (Object param: params) {
