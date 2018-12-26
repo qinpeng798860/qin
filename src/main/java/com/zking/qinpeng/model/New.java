@@ -3,7 +3,6 @@ package com.zking.qinpeng.model;
 import lombok.ToString;
 
 import java.io.Serializable;
-import java.util.List;
 
 @ToString
 public class New implements Serializable {
@@ -11,15 +10,6 @@ public class New implements Serializable {
 
     private String title;
 
-    private List<Category> categoryList;
-
-    public List<Category> getCategoryList() {
-        return categoryList;
-    }
-
-    public void setCategoryList(List<Category> categoryList) {
-        this.categoryList = categoryList;
-    }
 
     public New(Integer newsId, String title) {
         this.newsId = newsId;

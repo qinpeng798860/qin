@@ -20,6 +20,9 @@
           <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.8.13" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:5.0.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-test:5.0.2.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.0.2.RELEASE" />
+          <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
+          <element id="library" level="project" name="Maven: taglibs:standard:1.1.2" />
           <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.4.5" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.44" />
           <element id="library" level="project" name="Maven: com.github.pagehelper:pagehelper:5.1.2" />

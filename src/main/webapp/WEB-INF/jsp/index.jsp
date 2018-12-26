@@ -2,28 +2,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
+    <%@include file="head.jsp"%>
     <meta charset="utf-8">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta http-equiv="edit-Type" edit="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="BootstrapVue/jquery.min.js"></script>
-    <script src="BootstrapVue/bootstrap.min.js"></script>
-    <!-- Add this to <head> -->
-    <link type="text/css" rel="stylesheet" href="BootstrapVue/bootstrap-vue.css">
-    <link type="text/css" rel="stylesheet" href="BootstrapVue/bootstrap.min.css">
-    <!-- Add this after vue.js -->
-    <script src="BootstrapVue/vue.min.js"></script>
-
-    <%--&lt;%&ndash;添加到vue.js之后&nd  ash;%&gt;--%>
-    <script src="BootstrapVue/polyfill.min.js"></script>
-    <script src="BootstrapVue/bootstrap-vue.js"></script>
-
-    <link type="text/css" rel="stylesheet" href="css/index.css"><%--首页的样式--%>
-
-
-
+    <link type="text/css">
     <title>航班管理后台</title>
-
 </head>
 <script type="text/javascript">
     window.onload = function() {
@@ -50,6 +35,7 @@
 </script>
 
 <body>
+
    <b-navbar toggleable="md" type="dark" variant="info" id="bodyapp">
 
         <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
@@ -102,10 +88,11 @@
 
                    </div>
 
-               </div>
-
-
-           </div>
+                   </div>
+                </div>
+                    <div class="col-md-10">
+                   </div>
+            </div>
        </div>
    </div>
 </body>
