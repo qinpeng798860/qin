@@ -36,6 +36,8 @@ public class Test {
     @RequestMapping("test2")
     public String test2(@RequestBody String sex ) {
         System.out.println(sex+"---------------------------------------------------------");
+        System.out.println("你是魔鬼吗");
+
         return "index";
     }
 
