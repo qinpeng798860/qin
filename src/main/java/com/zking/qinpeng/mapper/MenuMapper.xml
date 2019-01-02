@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zking.qinpeng.mapper.MenuMapper" >
+  <resultMap id="BaseResultMap" type="com.zking.qinpeng.model.Menu" >
+    <constructor >
+      <idArg column="fid" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="fpid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="fname" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="furl" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ficon" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="fremark2" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="fremark3" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fid, fpid, fname, furl, ficon, fremark2, fremark3
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from user_menu
+    where fid = #{fid,jdbcType=INTEGER}
+  </select>
+    <select id="queryMenuList" resultType="com.zking.qinpeng.model.Menu">
+      SELECT
+      <include refid="Base_Column_List"/>
+       from user_menu where 1=1
+      <if test="fpid != null">
+          and fpid=#{fpid}
+      </if>
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from user_menu
+    where fid = #{fid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zking.qinpeng.model.Menu" >
+    insert into user_menu (fid, fpid, fname, 
+      furl, ficon, fremark2, 
+      fremark3)
+    values (#{fid,jdbcType=INTEGER}, #{fpid,jdbcType=VARCHAR}, #{fname,jdbcType=VARCHAR}, 
+      #{furl,jdbcType=VARCHAR}, #{ficon,jdbcType=VARCHAR}, #{fremark2,jdbcType=VARCHAR}, 
+      #{fremark3,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zking.qinpeng.model.Menu" >
+    insert into user_menu
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fid != null" >
+        fid,
+      </if>
+      <if test="fpid != null" >
+        fpid,
+      </if>
+      <if test="fname != null" >
+        fname,
+      </if>
+      <if test="furl != null" >
+        furl,
+      </if>
+      <if test="ficon != null" >
+        ficon,
+      </if>
+      <if test="fremark2 != null" >
+        fremark2,
+      </if>
+      <if test="fremark3 != null" >
+        fremark3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fid != null" >
+        #{fid,jdbcType=INTEGER},
+      </if>
+      <if test="fpid != null" >
+        #{fpid,jdbcType=VARCHAR},
+      </if>
+      <if test="fname != null" >
+        #{fname,jdbcType=VARCHAR},
+      </if>
+      <if test="furl != null" >
+        #{furl,jdbcType=VARCHAR},
+      </if>
+      <if test="ficon != null" >
+        #{ficon,jdbcType=VARCHAR},
+      </if>
+      <if test="fremark2 != null" >
+        #{fremark2,jdbcType=VARCHAR},
+      </if>
+      <if test="fremark3 != null" >
+        #{fremark3,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zking.qinpeng.model.Menu" >
+    update user_menu
+    <set >
+      <if test="fpid != null" >
+        fpid = #{fpid,jdbcType=VARCHAR},
+      </if>
+      <if test="fname != null" >
+        fname = #{fname,jdbcType=VARCHAR},
+      </if>
+      <if test="furl != null" >
+        furl = #{furl,jdbcType=VARCHAR},
+      </if>
+      <if test="ficon != null" >
+        ficon = #{ficon,jdbcType=VARCHAR},
+      </if>
+      <if test="fremark2 != null" >
+        fremark2 = #{fremark2,jdbcType=VARCHAR},
+      </if>
+      <if test="fremark3 != null" >
+        fremark3 = #{fremark3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where fid = #{fid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zking.qinpeng.model.Menu" >
+    update user_menu
+    set fpid = #{fpid,jdbcType=VARCHAR},
+      fname = #{fname,jdbcType=VARCHAR},
+      furl = #{furl,jdbcType=VARCHAR},
+      ficon = #{ficon,jdbcType=VARCHAR},
+      fremark2 = #{fremark2,jdbcType=VARCHAR},
+      fremark3 = #{fremark3,jdbcType=VARCHAR}
+    where fid = #{fid,jdbcType=INTEGER}
+  </update>
+</mapper>
